@@ -15,7 +15,8 @@ from tensorflow.keras import layers
 import tensorflowjs as tfjs
 
 
-tfjs_target_dir = 'tfjs_target_dir'
+#tfjs_target_dir = 'tfjs_target_dir'
+tfjs_models_dir = 'tf_models'
 
 
 data_root = pathlib.Path('../data_tf_dataset')
@@ -101,4 +102,4 @@ epochs = 6
 model.compile(loss="categorical_crossentropy", optimizer="adam", metrics=["accuracy"])
 model.fit(x_train, y_train, batch_size=batch_size, epochs=epochs, validation_split=0.25)
 
-tfjs.converters.save_keras_model(model, tfjs_target_dir)
+tfjs.converters.save_keras_model(model, tfjs_models_dir)
